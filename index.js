@@ -3,6 +3,10 @@ var app = express();
 var nunjucks = require('nunjucks');
 var Promise = require('bluebird');
 var fs = Promise.promisifyAll(require('fs'));
+var compression = require('compression');
+
+app.use(compression());
+app.use(express.static('public'), { maxAge: 86400000 });
 
 function getBlogObject(file) {
 	return new Promise(function(res,rej){
@@ -21,8 +25,6 @@ nunjucks.configure('views', {
   autoescape: true,
   express   : app
 });
-
-app.use(express.static('public'));
 
 app.get('/', function (req, res) {
   	return res.render('landing.html')
