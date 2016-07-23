@@ -72,5 +72,7 @@ app.get('/i/:image', function (req, res) {
   	})
 });
 
-app.listen(8087, 'localhost', function (){});
+app.listen(8087, 'localhost', function (){
+	console.log("Started.")
+});
 
