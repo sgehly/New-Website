@@ -75,7 +75,8 @@ p{
 	}
 	.block{
 		width:100%;
-		min-height: 100vh;
+		height:100%;
+		min-height:100vh;
 		background:transparent;
 		text-align:center;
 		display:flex;
@@ -113,10 +114,6 @@ p{
 		}
 		&.white{
 			background: rgba(255,255,255,0.7);
-			*{
-				color:$mainColor;
-				fill:$mainColor;
-			}
 		}
 		h2{
 			font-size:48px;
@@ -134,16 +131,18 @@ p{
 			font-weight:200;
 			max-width:968px;
 		}
-		svg:not(.logo){
+		svg{
 			width: 150px;
 			height:150px;
-			fill: $mainColor;
 			padding-bottom:40px;
 			transition:.25s all;
 			margin-left:20px;
 			margin-right:20px;
 			&.white{
 				fill: white;
+			}
+			&:not(.logo){
+				fill: $mainColor;
 			}
 
 			&:hover{
@@ -183,6 +182,7 @@ ul{
 	padding:10px;
 	margin:15px;
 	transition: .25s all;
+	color:$mainColor;
 
 	&.dark{
 		border:1px solid $mainColor;
