@@ -63,13 +63,7 @@ app.get('/i/:image', function (req, res) {
 	if(split.length !== 2 || validTypes.indexOf(split[1]) == -1){
 		return res.send("Invalid Image.");
 	}
-  	fs.readFileAsync(__dirname+'/private/images/'+image,'utf-8')
-  	.then(function(r){
-  		return res.send(r);
-  	})
-  	.catch(function(e){
-  		return res.send("404");
-  	})
+  	return res.sendFile(__dirname+'/private/images/'+image);
 });
 
 app.listen(8087, 'localhost', function (){
