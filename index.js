@@ -17,7 +17,6 @@ function getBlogObject(file) {
 	})
 }
 
-
 nunjucks.configure('views', {
   autoescape: true,
   express   : app
@@ -73,4 +72,5 @@ app.get('/i/:image', function (req, res) {
   	})
 });
 
-app.listen(8087, function (){});
+app.listen(8087, 'localhost', function (){});
+
