@@ -1,0 +1,37 @@
+	</body>
+	<script>
+		function generateBlock(ele, title, subtitle, url){
+			ele.innerHTML += '<a href="'+url+'" target="_blank"><div class="gitBlock"><h4>'+title+'</h4><p>'+subtitle+'</p></div></a>';
+		}
+	    function sendRequest(url,cb){
+	      var request = new XMLHttpRequest();
+	      request.open('GET', url, true);
+
+	      request.onload = function() {
+	        if (request.status >= 200 && request.status < 400) {
+	          var data = JSON.parse(request.responseText);
+	          cb(data)
+	        } else {console.log("Error reaching "+url)}
+	      };
+
+	      request.onerror = function() {console.log("Error reaching "+url)};
+	      request.send();
+	    }
+	    window.onload = function(){
+	      sendRequest('https://api.github.com/users/sgehly/repos', function(r){
+	        for(var i=0;i<r.length;i++){
+	          generateBlock(document.getElementById('github'), r[i].name, r[i].description, r[i].html_url)
+	        }
+	      })
+	      sendRequest('/posts', function(r){
+	      	var ele = document.getElementById('blogs');
+	      	if(r.posts.length > 0){
+	      		ele.innerHTML += "<p>and blog posts based off of my interests:</p>"
+	      	}
+	      	for(i=0;i<r.posts.length;i++){
+	      		generateBlock(ele, r.posts[i].title, r.posts[i].description, r.posts[i].url);
+	      	}
+	      })
+	    }
+	</script>
+</html>

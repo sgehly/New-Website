@@ -75,7 +75,7 @@ p{
 	}
 	.block{
 		width:100%;
-		min-height:100%;
+		min-height: 100vh;
 		background:transparent;
 		text-align:center;
 		display:flex;
@@ -134,7 +134,7 @@ p{
 			font-weight:200;
 			max-width:968px;
 		}
-		svg{
+		svg:not(.logo){
 			width: 150px;
 			height:150px;
 			fill: $mainColor;

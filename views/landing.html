@@ -36,25 +36,25 @@
 		<h2>Awesome Brands</h2>
 		<p>I've had the distinct pleasure of working with trusted brands throughout the nation as well as overseas to create amazing products with even better teams, whether be it my two summers at Cantina Consulting, creating a social network for all ages and designing parts of their website, working in New York with brands like HostVenom and Ready2Frag to create the Clanyon project, or even answering support tickets at "Max's Hosting" in science class in seventh grade. I love what I do, and hope that I'll be able to create even better experiences in the future. From left to right, the brands below are Cantina Consulting, HostVenom LLC, Ready2Frag, Clanyon, TheChunk Network, Max's Hosting, and the Friends of the Plymouth Pound.</p>
 		<div class="pushDown">
-			<svg viewBox="25 10 350 390">
+			<svg viewBox="25 10 350 390" class="logo">
 				<use xlink:href="/img/brand/cantina.svg#logo"></use>
 			</svg>
-			<svg viewBox="-20 -10 250 250">
+			<svg viewBox="-20 -10 250 250" class="logo">
 				<use xlink:href="/img/brand/hostvenom.svg#logo"></use>
 			</svg>
-			<svg viewBox="-60 75 650 400">
+			<svg viewBox="-60 75 650 400" class="logo">
 				<use xlink:href="/img/brand/r2f.svg#logo"></use>
 			</svg>
-			<svg viewBox="4 0 250 250">
+			<svg viewBox="4 0 250 250" class="logo">
 				<use xlink:href="/img/brand/clanyon.svg#logo"></use>
 			</svg>
-			<svg viewBox="-30 160 600 250">
+			<svg viewBox="-30 160 600 250" class="logo">
 				<use xlink:href="/img/brand/the_chunk.svg#logo"></use>
 			</svg>
-			<svg viewBox="50 -5 40 160">
+			<svg viewBox="50 -5 40 160" class="logo">
 				<use xlink:href="/img/brand/mhs.svg#logo"></use>
 			</svg>
-			<svg viewBox="4 -30 250 250" class="white">
+			<svg viewBox="4 -30 250 250" class="white logo">
 				<use xlink:href="/img/brand/fpp.svg#logo"></use>
 			</svg>
 		</div>
@@ -151,38 +151,4 @@
 		</div>
 	</div>
 </div>
-<script>
-	function generateBlock(ele, title, subtitle, url){
-		ele.innerHTML += '<a href="'+url+'" target="_blank"><div class="gitBlock"><h4>'+title+'</h4><p>'+subtitle+'</p></div></a>';
-	}
-    function sendRequest(url,cb){
-      var request = new XMLHttpRequest();
-      request.open('GET', url, true);
-
-      request.onload = function() {
-        if (request.status >= 200 && request.status < 400) {
-          var data = JSON.parse(request.responseText);
-          cb(data)
-        } else {console.log("Error reaching "+url)}
-      };
-
-      request.onerror = function() {console.log("Error reaching "+url)};
-      request.send();
-    }
-    window.onload = function(){
-      sendRequest('https://api.github.com/users/sgehly/repos', function(r){
-        for(var i=0;i<r.length;i++){
-          generateBlock(document.getElementById('github'), r[i].name, r[i].description, r[i].html_url)
-        }
-      })
-      sendRequest('/posts', function(r){
-      	var ele = document.getElementById('blogs');
-      	if(r.posts.length > 0){
-      		ele.innerHTML += "<p>and blog posts based off of my interests:</p>"
-      	}
-      	for(i=0;i<r.posts.length;i++){
-      		generateBlock(ele, r.posts[i].title, r.posts[i].description, r.posts[i].url);
-      	}
-      })
-    }
-    </script>
+{% include "footer.html" %}
