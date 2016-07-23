@@ -6,7 +6,7 @@ var fs = Promise.promisifyAll(require('fs'));
 var compression = require('compression');
 
 app.use(compression());
-app.use(express.static('public'), { maxAge: 86400000 });
+app.use(express.static('public',{ maxAge: 86400000 }));
 
 function getBlogObject(file) {
 	return new Promise(function(res,rej){
