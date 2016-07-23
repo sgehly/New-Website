@@ -179,11 +179,7 @@ ul{
 	padding:10px;
 	margin:15px;
 	transition: .25s all;
-
-	@media screen and (max-width: $mobileWidth){
-		width:80%;
-	}
-
+	
 	&.dark{
 		border:1px solid $mainColor;
 		&:hover{

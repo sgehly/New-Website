@@ -135,9 +135,6 @@ ul {
   padding: 10px;
   margin: 15px;
   transition: .25s all; }
-  @media screen and (max-width: 968px) {
-    .gitBlock {
-      width: 80%; } }
   .gitBlock.dark {
     border: 1px solid #1d283a; }
     .gitBlock.dark:hover {
