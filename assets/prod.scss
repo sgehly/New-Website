@@ -62,6 +62,10 @@ p{
 		background-image:url(/img/clanyonpanel.png);
 		color:white;
 	}
+	&.felineSect{
+		background-image:url(/img/feline.jpg);
+		color:#1A2837;
+	}
 	&.brands{
 		background-image:url(/img/bg.svg);
 	}
@@ -106,6 +110,9 @@ p{
 			background: transparentize($mainColor, 0.1);
 			&.darken{
 				background: transparentize($mainColor, 0.05);
+				svg{
+					padding-top:75px;
+				}
 			}
 			*{
 				color:white;
@@ -174,7 +181,9 @@ ul{
 		padding-bottom:10px;
 	}
 }
-
+#github{
+	padding-bottom:100px;
+}
 .gitBlock{
 	border:1px solid white;
 	border-radius:3px;

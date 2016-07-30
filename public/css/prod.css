@@ -47,6 +47,9 @@ p {
   .content-section.clanyonSect {
     background-image: url(/img/clanyonpanel.png);
     color: white; }
+  .content-section.felineSect {
+    background-image: url(/img/feline.jpg);
+    color: #1A2837; }
   .content-section.brands {
     background-image: url(/img/bg.svg); }
   .content-section.twoBlocks {
@@ -81,6 +84,8 @@ p {
       background: rgba(29, 40, 58, 0.9); }
       .content-section .block.black.darken {
         background: rgba(29, 40, 58, 0.95); }
+        .content-section .block.black.darken svg {
+          padding-top: 75px; }
       .content-section .block.black * {
         color: white;
         fill: white; }
@@ -130,6 +135,9 @@ ul {
     font-size: 16px;
     padding-top: 10px;
     padding-bottom: 10px; }
+
+#github {
+  padding-bottom: 100px; }
 
 .gitBlock {
   border: 1px solid white;
