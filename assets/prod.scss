@@ -50,6 +50,7 @@ p{
 	}
 	&.flexMap{
 		background-image:url(/img/map.svg);
+		border-bottom:3px solid $mainColor;
 	}
 	&.centered{
 		display:flex;

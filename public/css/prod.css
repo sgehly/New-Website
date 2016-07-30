@@ -37,7 +37,8 @@ p {
     .content-section.header p {
       font-size: 36px; }
   .content-section.flexMap {
-    background-image: url(/img/map.svg); }
+    background-image: url(/img/map.svg);
+    border-bottom: 3px solid #1d283a; }
   .content-section.centered {
     display: flex;
     align-items: center;
