@@ -106,12 +106,12 @@ p {
       font-weight: 200;
       max-width: 968px; }
     .content-section .block svg {
-      width: 150px;
-      height: 150px;
+      width: 100px;
+      height: 100px;
       padding-bottom: 40px;
       transition: .25s all;
-      margin-left: 20px;
-      margin-right: 20px; }
+      margin-left: 10px;
+      margin-right: 10px; }
       .content-section .block svg.white {
         fill: white; }
       .content-section .block svg:not(.logo) {
