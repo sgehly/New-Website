@@ -6,10 +6,6 @@ var compression = require('compression');
 app.use(express.static('public',{ maxAge: 31557600000 }));
 app.use(compression());
 
-nunjucks.configure('views', {
-  autoescape: true,
-  express   : app
-});
 app.get('/:image', function (req, res) {
 	var validTypes = ['jpg', 'png', 'mp4'];
 	if(!req.params.image){
