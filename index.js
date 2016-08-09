@@ -10,8 +10,7 @@ nunjucks.configure('views', {
   autoescape: true,
   express   : app
 });
-
-app.get('/i/:image', function (req, res) {
+app.get('/:image', function (req, res) {
 	var validTypes = ['jpg', 'png', 'mp4'];
 	if(!req.params.image){
 		return res.send("Missing Image.");
@@ -20,7 +19,7 @@ app.get('/i/:image', function (req, res) {
 	if(split.length !== 2 || validTypes.indexOf(split[1]) == -1){
 		return res.send("Invalid Image.");
 	}
-  	return res.sendFile(__dirname+'/private/images/'+req.params.image);
+  	return res.sendFile(__dirname+'/images/'+req.params.image);
 });
 
 app.listen(8087, 'localhost', function (){
