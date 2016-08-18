@@ -21,5 +21,5 @@ module.exports = [
 	"NbqtAuT4zbk",
 	"CRcZoDe4wb8",
 	"ZXVhOPiM4mk",
-	"c4ayZZ4LAX0",
-},
+	"c4ayZZ4LAX0"
+]
