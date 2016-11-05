@@ -9,7 +9,7 @@ app.use(express.static('public',{ maxAge: 31557600000 }));
 app.use(compression());
 
 app.get('/', function(req,res){
-	return res.redirect('https://geh.li');
+	return res.redirect('https://geh.li?imageServer=true');
 })
 app.get('/:image', function(req,res){
 	var video = videos[Math.floor(Math.random()*videos.length)];
